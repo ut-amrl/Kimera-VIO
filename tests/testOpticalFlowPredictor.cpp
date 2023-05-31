@@ -16,6 +16,7 @@
 
 #include <gflags/gflags.h>
 #include <gtest/gtest.h>
+#include <opencv2/viz/viz3d.hpp>
 
 #include "kimera-vio/frontend/optical-flow/OpticalFlowPredictor.h"
 #include "kimera-vio/frontend/optical-flow/OpticalFlowPredictorFactory.h"

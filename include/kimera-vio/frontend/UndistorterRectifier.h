@@ -19,6 +19,7 @@
 
 #include <opencv2/calib3d.hpp>
 #include <opencv2/core.hpp>
+#include <boost/optional/optional.hpp> 
 
 #include "kimera-vio/frontend/CameraParams.h"
 #include "kimera-vio/utils/Macros.h"

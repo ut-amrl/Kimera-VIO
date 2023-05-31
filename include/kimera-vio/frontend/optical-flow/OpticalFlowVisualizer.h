@@ -16,8 +16,11 @@
 
 #include <math.h>
 
-#include <opencv/cv.h>
-#include <opencv2/opencv.hpp>
+#if OPENCV_VERSION >= 4
+  #include <opencv/cv.h>
+#else
+  #include <opencv2/opencv.hpp>
+#endif
 
 #include "kimera-vio/utils/Macros.h"
 

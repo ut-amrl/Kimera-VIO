@@ -1247,6 +1247,7 @@ void OpenCvVisualizer3D::visualizeMesh3D(const cv::Mat& map_points_3d,
   CHECK_NOTNULL(widgets);
   // Check data
   bool color_mesh = false;
+  bool tcoords_mesh = false;
   if (colors.rows != 0) {
     CHECK_EQ(map_points_3d.rows, colors.rows)
         << "Map points and Colors should have same number of rows. One"
@@ -1255,6 +1256,7 @@ void OpenCvVisualizer3D::visualizeMesh3D(const cv::Mat& map_points_3d,
         << "Texture provided, but colors as well... Do not provide colors if "
            "you want your mesh to be textured.";
     color_mesh = true;
+    bool tcoords_mesh = true;
   }
 
   if (tcoords.rows != 0) {
@@ -1273,7 +1275,7 @@ void OpenCvVisualizer3D::visualizeMesh3D(const cv::Mat& map_points_3d,
   cv_mesh.cloud = map_points_3d.t();
   cv_mesh.polygons = polygons_mesh;
   cv_mesh.colors = color_mesh ? colors.t() : cv::Mat();
-  cv_mesh.tcoords = tcoords.t();
+  cv_mesh.tcoords = tcoords_mesh ? tcoords.t() : cv::Mat();
   cv_mesh.texture = texture;
 
   // Plot mesh.
