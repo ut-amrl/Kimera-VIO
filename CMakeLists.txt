@@ -189,6 +189,9 @@ add_library(kimera_vio::kimera_vio ALIAS kimera_vio)
 add_executable(stereoVIOEuroc ./examples/KimeraVIO.cpp)
 target_link_libraries(stereoVIOEuroc PUBLIC kimera_vio::kimera_vio)
 
+add_executable(stereoVIOEurocEvaluation ./examples/KimeraVIOEvaluation.cpp)
+target_link_libraries(stereoVIOEurocEvaluation PUBLIC kimera_vio::kimera_vio)
+
 ############################### TESTS ##########################################
 ### Add testing
 option(KIMERA_BUILD_TESTS "Build tests" ON)
